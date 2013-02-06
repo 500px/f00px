@@ -4,7 +4,7 @@ module F00px
     extend F00px::Options
 
     option :endpoint, default: 'https://api.500px.com/'
-    option :auth_middleware
+    option :auth_middleware, default: FaradayMiddleware::OAuth
     option :consumer_key
     option :consumer_secret
     option :token

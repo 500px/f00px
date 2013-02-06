@@ -13,11 +13,11 @@ module F00px
         if args.first == ::FaradayMiddleware::OAuth
 
           tokens = F00px.credentials.dup
-          tokens.merge! args.last
+          tokens.merge!(args.last) if args.lenght > 1
           tokens.merge!(token: token) if token
           tokens.merge!(token_secret: token_secret) if token_secret
 
-          builder.use(Faraday::Request::OAuth, tokens)
+          builder.use(args.first, tokens)
         else
           builder.use(*F00px.auth_middleware)
         end
