@@ -18,7 +18,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add this code to some initializer:
+
+    F00px.configure do |config|
+        config.consumer_key = __consumer_key__
+        config.consumer_secret = __consumer_secret__
+        config.token = __token__
+        config.token_secret = __token_secret__
+    end
+
+Then just use the api:
+
+    response = F00px.get('/users/1')
 
 ## Contributing
 
