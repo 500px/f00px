@@ -10,7 +10,7 @@ module F00px
       Faraday.new(options) do |builder|
         args = Array.wrap(F00px.auth_middleware)
 
-        if args.first == FaradayMiddleware::OAuth
+        if args.first == ::FaradayMiddleware::OAuth
 
           tokens = F00px.credentials.dup
           tokens.merge! args.last
