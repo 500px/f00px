@@ -1,10 +1,13 @@
+require "f00px/configuration/options"
+
 module F00px
   module Configuration
     extend self
-    include F00px::Options
+    include Options
 
-    option :endpoint, default: 'https://api.500px.com/'
-    option :auth_middleware, default: FaradayMiddleware::OAuth
+    option :endpoint, default: 'https://api.500px.com'
+    option :api_version, default: 'v1'
+    option :middleware, default: ::FaradayMiddleware::OAuth
     option :consumer_key
     option :consumer_secret
     option :token
@@ -17,10 +20,6 @@ module F00px
 
     def configure
       block_given? ? yield(self) : self
-    end
-
-    def auth(*options)
-      self.auth_middleware = *options
     end
 
     def credentials

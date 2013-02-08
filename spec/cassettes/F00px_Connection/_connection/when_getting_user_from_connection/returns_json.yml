@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.500px.com/v1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Auth <SECRET>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 08 Feb 2013 22:44:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      ETag:
+      - ! '"600769fae9f2314b06919da3b3a70e8f"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Set-Cookie:
+      - Cookie <SECRET>
+      X-Runtime:
+      - '0.048851'
+      X-Rack-Cache:
+      - miss
+    body:
+      encoding: US-ASCII
+      string: ! '{"user":{"id":355445,"username":"arthurnn","firstname":"Arthurn","lastname":"Neves","birthday":null,"sex":null,"city":"Toronto","state":"Ontario","country":"Canada","registration_date":"2011-10-27T16:29:02-04:00","about":"","domain":"arthur.com","upgrade_status":2,"fotomoto_on":true,"locale":"br","show_nude":true,"store_on":true,"contacts":{"blog":"arthurnn.com/blog","facebook":"100000286553719","twitter":"arthurnn"},"equipment":{},"fullname":"Arthurn
+        Neves","userpic_url":"http://acdn.500px.net/355445/3bc1756f63dc4f7538edb03dd9e4838f066980ff/1.jpg?111","email":"arthur@500px.com","photos_count":8,"affection":103,"in_favorites_count":31,"friends_count":451,"followers_count":94,"upload_limit":null,"upload_limit_expiry":"2013-02-08T17:44:40-05:00","upgrade_status_expiry":"2016-02-02","admin":1,"auth":{"facebook":1,"twitter":1}}}'
+    http_version: 
+  recorded_at: Fri, 08 Feb 2013 22:44:40 GMT
+recorded_with: VCR 2.4.0

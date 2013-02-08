@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.500px.com/v1/users/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Auth <SECRET>
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 08 Feb 2013 22:44:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      ETag:
+      - ! '"e6c7c9e0ea1b64c9c34747c7ba41aefd"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Set-Cookie:
+      - Cookie <SECRET>
+      X-Runtime:
+      - '0.032795'
+      X-Rack-Cache:
+      - miss
+    body:
+      encoding: US-ASCII
+      string: ! '{"user":{"id":1,"username":"tchebotarev","firstname":"Evgeny","lastname":"Tchebotarev","birthday":null,"sex":1,"city":"Toronto","state":"","country":"Canada","registration_date":"2009-10-31T19:59:59-04:00","about":"Co-founder
+        and COO of @500px. Photographer, designer, beginner kite surfer, motorcycle
+        rider. Exploring life, one heart beat at a time.","domain":"evgenytchebotarev.com","fotomoto_on":true,"locale":"en","show_nude":false,"fullname":"Evgeny
+        Tchebotarev","userpic_url":"http://acdn.500px.net/1/34059c97bf3c79f4923cd083756e6a8d726fa956/1.jpg?66","upgrade_status":2,"store_on":true,"contacts":{"website":"evgenytchebotarev.com","skype":"blindmonk","livejournal":"blindmonk","flickr":"tchebotarev","facebook":"662390283"},"equipment":{"camera":["Nikon
+        D800"],"lens":["Nikkor 14-24 mm f/2.8","Nikkor 24-70mm f/2.8","Nikkor 70-200mm
+        f/2.8"],"misc":["MacBook Air"]},"photos_count":741,"affection":28903,"in_favorites_count":10286,"friends_count":2909,"followers_count":4923,"admin":1,"avatars":{"default":{"http":"http://acdn.500px.net/1/34059c97bf3c79f4923cd083756e6a8d726fa956/1.jpg?66","https":"https://gp1.wac.edgecastcdn.net/806614/avatars/avatars.500px.net/1/34059c97bf3c79f4923cd083756e6a8d726fa956/1.jpg?66"},"large":{"http":"http://acdn.500px.net/1/34059c97bf3c79f4923cd083756e6a8d726fa956/2.jpg?66","https":"https://gp1.wac.edgecastcdn.net/806614/avatars/avatars.500px.net/1/34059c97bf3c79f4923cd083756e6a8d726fa956/2.jpg?66"},"small":{"http":"http://acdn.500px.net/1/34059c97bf3c79f4923cd083756e6a8d726fa956/3.jpg?66","https":"https://gp1.wac.edgecastcdn.net/806614/avatars/avatars.500px.net/1/34059c97bf3c79f4923cd083756e6a8d726fa956/3.jpg?66"},"tiny":{"http":"http://acdn.500px.net/1/34059c97bf3c79f4923cd083756e6a8d726fa956/4.jpg?66","https":"https://gp1.wac.edgecastcdn.net/806614/avatars/avatars.500px.net/1/34059c97bf3c79f4923cd083756e6a8d726fa956/4.jpg?66"}},"following":true}}'
+    http_version: 
+  recorded_at: Fri, 08 Feb 2013 22:44:40 GMT
+recorded_with: VCR 2.4.0
