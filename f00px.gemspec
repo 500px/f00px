@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 require File.expand_path('../lib/f00px/version', __FILE__)
 
 Gem::Specification.new do |gem|
