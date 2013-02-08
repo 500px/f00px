@@ -1,26 +1,35 @@
 module F00px
   module Options
 
-    def defaults
-      @defaults ||= {}
+    def self.included(base)
+      base.extend ClassMethods
     end
 
-    def option(name, options = {})
-      defaults[name] = settings[name] = options[:default]
+    module ClassMethods
 
-      class_eval <<-RUBY
-        def #{name}
-          settings[#{name.inspect}]
-        end
+      def defaults
+        @defaults ||= {}
+      end
 
-        def #{name}=(value)
-          settings[#{name.inspect}] = value
-        end
+      def option(name, options = {})
+        self.defaults[name] = options[:default]
 
-        def #{name}?
-          !!#{name}
-        end
-      RUBY
+
+        class_eval <<-RUBY
+          def #{name}
+            settings['#{name}'.to_sym] || F00px::Configuration.defaults['#{name}'.to_sym]
+          end
+
+          def #{name}=(value)
+            settings['#{name}'.to_sym] = value
+          end
+
+          def #{name}?
+            !!#{name}
+          end
+        RUBY
+      end
+
     end
 
     def reset

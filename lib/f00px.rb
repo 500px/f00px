@@ -16,12 +16,17 @@ module F00px
 
   class << self
 
-    delegate(*(Configuration.public_instance_methods(false) << { to: Configuration }))
-
-    delegate(:connection, :queue, :get, to: :client)
+    include Configuration
 
     def client
       @client ||= F00px::Client.new
+    end
+
+    private
+
+    def method_missing(method_name, *args, &block)
+      return super unless client.respond_to?(method_name)
+      client.send(method_name, *args, &block)
     end
 
   end

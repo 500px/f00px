@@ -4,12 +4,14 @@ module F00px
     include Connection
     include Queue
 
-    attr_reader :token, :token_secret, :user_id
+    include Configuration
 
     def initialize(options = {})
-      @token = options[:token]
-      @token_secret = options[:token_secret]
-      @user_id = options[:user_id]
+
+      F00px::Configuration.defaults.keys.each do |key|
+        send "#{key}=".to_sym, options[key] || F00px.send("#{key}".to_sym)
+      end
+
     end
 
 
