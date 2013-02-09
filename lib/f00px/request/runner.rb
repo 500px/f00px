@@ -18,7 +18,8 @@ module F00px
       end
 
       def request(method, url, params = {})
-        params[:consumer_key] = consumer_key if consumer_key
+        params = params.dup
+        params[:consumer_key] = consumer_key
 
         Callback.new(method, url, params).tap do |r|
           @queued_requests << r

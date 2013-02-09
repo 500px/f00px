@@ -1,12 +1,14 @@
-require "faraday_middleware"
-require 'typhoeus'
-require 'typhoeus/adapters/faraday'
-
 require "f00px/version"
-require 'f00px/configuration'
-require 'f00px/connection'
-require 'f00px/request'
-require 'f00px/client'
+require "cgi"
+require "faraday_middleware"
+require "typhoeus"
+require "typhoeus/adapters/faraday"
+require "f00px/error"
+require "f00px/authentication"
+require "f00px/configuration"
+require "f00px/connection"
+require "f00px/request"
+require "f00px/client"
 
 module F00px
 

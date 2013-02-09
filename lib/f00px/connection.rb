@@ -22,7 +22,7 @@ module F00px
 
         builder.request :url_encoded
 
-        builder.response :json, content_type: /\bjson$/
+#        builder.response :json, content_type: /\bjson$/
 
         builder.use Faraday::Response::Logger, logger if logger?
 

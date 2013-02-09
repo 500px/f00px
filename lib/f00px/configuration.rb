@@ -19,14 +19,15 @@ module F00px
     end
 
     def configure
-      block_given? ? yield(self) : self
+      yield(self) if block_given?
+      self
     end
 
     def credentials
-      { :consumer_key => self.consumer_key,
-        :consumer_secret => self.consumer_secret,
-        :token => self.token,
-        :token_secret => self.token_secret
+      { :consumer_key => consumer_key,
+        :consumer_secret => consumer_secret,
+        :token => token,
+        :token_secret => token_secret
       }
     end
 
