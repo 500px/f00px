@@ -20,16 +20,42 @@ Or install it yourself as:
 
 Add this code to some initializer:
 
-    F00px.configure do |config|
-        config.consumer_key = __consumer_key__
-        config.consumer_secret = __consumer_secret__
-        config.token = __token__
-        config.token_secret = __token_secret__
-    end
+```ruby
+F00px.configure do |config|
+  config.consumer_key = __consumer_key__
+  config.consumer_secret = __consumer_secret__
+  config.token = __token__
+  config.token_secret = __token_secret__
+end
+```
 
 Then just use the api:
 
-    response = F00px.get('/users/1')
+```ruby
+response = F00px.get('users/1')
+puts response.body
+```
+
+You also can create multiple clients.
+
+With oauth
+```ruby
+client = F00px::Client.new
+client.token = '__client_token__'
+client.token_secret = '__client_token_secret__'
+
+response = client.get('users')
+puts response.body
+```
+
+With xauth
+```ruby
+client = F00px::Client.new
+client.xauth('arthurnn', '**password**')
+
+response = client.get('users')
+puts response.body
+```
 
 ## Contributing
 
