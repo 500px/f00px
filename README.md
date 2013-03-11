@@ -1,6 +1,6 @@
 # F00px
 
-500px api ruby gem
+500px api ruby gem [![Build Status](https://travis-ci.org/500px/f00px.png)](https://travis-ci.org/500px/f00px)
 
 ## Installation
 
