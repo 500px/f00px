@@ -39,13 +39,6 @@ describe F00px::Request do
 
   describe ".queue", :vcr do
 
-    it "receives a Request::Runner" do
-
-      instance.queue do |q|
-        q.should be_a(F00px::Request::Runner)
-      end
-    end
-
     context ".get" do
 
       let(:json) do

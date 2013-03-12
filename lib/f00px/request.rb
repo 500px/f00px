@@ -8,21 +8,21 @@ module F00px
       queue = Request::Runner.new(connection)
       queue.user_id = user_id if user_id?
       queue.consumer_key = consumer_key if consumer_key?
-      yield(queue)
+      queue.instance_eval(&block)
       queue.run!
     end
 
     def get(url, params = {})
-      queue do |q|
-        q.get(url, params).complete do |response|
+      queue do
+        get(url, params).complete do |response|
           return response
         end
       end
     end
 
     def post(url, params = {})
-      queue do |q|
-        q.post(url, params).complete do |response|
+      queue do
+        post(url, params).complete do |response|
           return response
         end
       end
