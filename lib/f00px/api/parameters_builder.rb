@@ -6,7 +6,7 @@ module F00px
     end
 
     def images(*images)
-      @params[:images] = Array(images)
+      @params[:image_size] = Array(images)
       self
     end
 
@@ -16,6 +16,7 @@ module F00px
     end
 
     def options(opts)
+      images(*opts[:images]) if opts[:images]
       @params.merge!(opts)
       self
     end

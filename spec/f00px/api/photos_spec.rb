@@ -59,7 +59,7 @@ describe F00px::Api::Photos do
         end
 
         it "sets the right images array" do
-          client.params[:images].should eq([2,3,4])
+          client.params[:image_size].should eq([2,3,4])
         end
       end
 
@@ -75,7 +75,7 @@ describe F00px::Api::Photos do
         end
 
         it "sets the right images array" do
-          client.params[:images].should eq([3,4])
+          client.params[:image_size].should eq([3,4])
         end
       end
     end
