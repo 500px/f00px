@@ -8,6 +8,7 @@ require "f00px/authentication"
 require "f00px/configuration"
 require "f00px/connection"
 require "f00px/request"
+require "f00px/api"
 require "f00px/client"
 
 module F00px

@@ -6,6 +6,8 @@ module F00px
     include Connection
     include Request
 
+    include Api::Photos
+
     def self.configure(&block)
       Client.new.configure(&block)
     end
@@ -15,7 +17,5 @@ module F00px
         settings[key] = options[key] || F00px.__send__("#{key}".to_sym)
       end
     end
-
-
   end
 end
