@@ -6,7 +6,7 @@ VCR.configure do |c|
 
   c.allow_http_connections_when_no_cassette = true
 
-  if ENV['RERECORD']
+  if !!ENV['RERECORD'] && ENV['RERECORD'] == 'true'
     c.default_cassette_options = {:record => :all}
   else
     c.default_cassette_options = {:record => :none}
