@@ -1,8 +1,6 @@
 require "f00px/version"
 require "cgi"
 require "faraday_middleware"
-require "typhoeus"
-require "typhoeus/adapters/faraday"
 require "f00px/error"
 require "f00px/authentication"
 require "f00px/configuration"

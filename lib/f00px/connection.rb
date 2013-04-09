@@ -26,14 +26,8 @@ module F00px
 
         builder.use Faraday::Response::Logger, logger if logger?
 
-        builder.adapter connection_adapter
+        builder.adapter faraday_adapter
       end
-    end
-
-    private
-
-    def connection_adapter
-      :typhoeus
     end
 
   end

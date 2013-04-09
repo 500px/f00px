@@ -19,7 +19,6 @@ Gem::Specification.new do |gem|
   gem.rubyforge_project         = "f00px"
 
   gem.add_dependency("faraday_middleware", ["~> 0.9.0"])
-  gem.add_dependency("typhoeus", ["~> 0.5.4"])
   gem.add_dependency("simple_oauth", ["~> 0.2.0"])
 
 end

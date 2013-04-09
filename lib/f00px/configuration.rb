@@ -15,6 +15,8 @@ module F00px
     option :logger
     option :user_id
 
+    option :faraday_adapter, default: Faraday.default_adapter
+
     def self.included(base)
     end
 
