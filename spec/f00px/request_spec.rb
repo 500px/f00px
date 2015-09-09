@@ -37,6 +37,17 @@ describe F00px::Request do
     end
   end
 
+  describe ".http", :vcr do
+
+    let(:response) do
+      instance.http(:put, 'users', {firstname: 'Arthurn'})
+    end
+
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+  end
+
   describe ".queue", :vcr do
 
     context ".get" do

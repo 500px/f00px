@@ -28,5 +28,13 @@ module F00px
       end
     end
 
+    def http(method, url, params = {})
+      queue do
+        request(method, url, params).complete do |response|
+          return response
+        end
+      end
+    end
+
   end
 end
