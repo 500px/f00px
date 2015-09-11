@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.500px.com/v1/users
+    body:
+      encoding: US-ASCII
+      string: firstname=Arthurn&_method=put
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Auth <SECRET>
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 08 Feb 2013 22:44:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      ETag:
+      - ! '"7776dae658fa0dbc2fde109d737bf4c3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - Cookie <SECRET>
+      X-Runtime:
+      - '0.039580'
+      X-Rack-Cache:
+      - invalidate, pass
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":355445,"username":"arthurnn","firstname":"Arthurn","lastname":"Neves","birthday":null,"sex":null,"city":"Toronto","state":"Ontario","country":"Canada","registration_date":"2011-10-27T16:29:02-04:00","about":"","domain":"arthur.com","upgrade_status":8,"fotomoto_on":true,"locale":"br","show_nude":true,"store_on":true,"contacts":{"blog":"arthurnn.com/blog","facebook":"100000286553719","twitter":"arthurnn"},"equipment":{}}'
+    http_version: 
+  recorded_at: Fri, 08 Feb 2013 22:44:40 GMT
+recorded_with: VCR 2.4.0

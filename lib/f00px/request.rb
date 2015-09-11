@@ -28,13 +28,26 @@ module F00px
       end
     end
 
-    def http(method, url, params = {})
+    def delete(url, params = {})
+      enqueue(:delete, url, params)
+    end
+
+    def put(url, params = {})
+      enqueue(:put, url, params)
+    end
+
+    def request(method, url, params = {})
+      enqueue(method, url, params)
+    end
+
+    private
+
+    def enqueue(method, url, params)
       queue do
         request(method, url, params).complete do |response|
           return response
         end
       end
     end
-
   end
 end

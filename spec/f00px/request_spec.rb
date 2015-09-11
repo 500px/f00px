@@ -37,10 +37,31 @@ describe F00px::Request do
     end
   end
 
-  describe ".http", :vcr do
+  describe ".delete", :vcr do
+    let(:response) do
+      instance.delete('users', {firstname: 'Arthurn'})
+    end
+
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe ".put", :vcr do
 
     let(:response) do
-      instance.http(:put, 'users', {firstname: 'Arthurn'})
+      instance.put('users', {firstname: 'Arthurn'})
+    end
+
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe ".request", :vcr do
+
+    let(:response) do
+      instance.request(:put, 'users', {firstname: 'Arthurn'})
     end
 
     it 'returns status 200' do
