@@ -13,20 +13,33 @@ module F00px
     end
 
     def get(url, params = {})
-      queue do
-        get(url, params).complete do |response|
-          return response
-        end
-      end
+      enqueue(:get, url, params)
     end
 
     def post(url, params = {})
+      enqueue(:post, url, params)
+    end
+
+    def delete(url, params = {})
+      enqueue(:delete, url, params)
+    end
+
+    def put(url, params = {})
+      enqueue(:put, url, params)
+    end
+
+    def request(method, url, params = {})
+      enqueue(method, url, params)
+    end
+
+    private
+
+    def enqueue(method, url, params)
       queue do
-        post(url, params).complete do |response|
+        request(method, url, params).complete do |response|
           return response
         end
       end
     end
-
   end
 end

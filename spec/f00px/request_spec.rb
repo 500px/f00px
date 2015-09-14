@@ -37,6 +37,38 @@ describe F00px::Request do
     end
   end
 
+  describe ".delete", :vcr do
+    let(:response) do
+      instance.delete('users', {firstname: 'Arthurn'})
+    end
+
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe ".put", :vcr do
+
+    let(:response) do
+      instance.put('users', {firstname: 'Arthurn'})
+    end
+
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe ".request", :vcr do
+
+    let(:response) do
+      instance.request(:put, 'users', {firstname: 'Arthurn'})
+    end
+
+    it 'returns status 200' do
+      expect(response.status).to eq(200)
+    end
+  end
+
   describe ".queue", :vcr do
 
     context ".get" do
@@ -44,7 +76,7 @@ describe F00px::Request do
       let(:json) do
         json = nil
         instance.queue do |q|
-          q.get('users/1').complete do |r|
+          q.request(:get, 'users/1').complete do |r|
             json = r.body
           end
         end
