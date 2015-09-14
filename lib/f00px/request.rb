@@ -13,19 +13,11 @@ module F00px
     end
 
     def get(url, params = {})
-      queue do
-        get(url, params).complete do |response|
-          return response
-        end
-      end
+      enqueue(:get, url, params)
     end
 
     def post(url, params = {})
-      queue do
-        post(url, params).complete do |response|
-          return response
-        end
-      end
+      enqueue(:post, url, params)
     end
 
     def delete(url, params = {})

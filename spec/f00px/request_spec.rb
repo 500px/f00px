@@ -76,7 +76,7 @@ describe F00px::Request do
       let(:json) do
         json = nil
         instance.queue do |q|
-          q.get('users/1').complete do |r|
+          q.request(:get, 'users/1').complete do |r|
             json = r.body
           end
         end

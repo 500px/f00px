@@ -8,15 +8,6 @@ module F00px
         @connection = conn
       end
 
-      def get(url, params={})
-        request(:get, url, params)
-      end
-
-      # Queues a POST request
-      def post(url, params={})
-        request(:post, url, params)
-      end
-
       def request(method, url, params = {})
         params = params.dup
         params[:consumer_key] = consumer_key
