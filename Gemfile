@@ -6,7 +6,7 @@ gemspec
 gem "rake"
 
 group :test do
-  gem 'rspec'
+  gem 'rspec', '~> 2.0'
   gem "vcr"
   gem 'faraday'
 end
